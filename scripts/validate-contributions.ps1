@@ -32,6 +32,7 @@ $absolutePathPatterns = @(
 # Files allowed to mention paths as negative examples or config templates
 $pathCheckExempt = @(
     "CONTRIBUTING.md",
+    "DOCUMENTATION-STRUCTURE.md",
     "local.config.example.json",
     "gc2-docs.code-workspace.example",
     "scripts\validate-contributions.ps1",

@@ -10,6 +10,7 @@ This repository is the **Game Creator 2 Community Documentation** GitBook space,
 2. Read `skill.md` — GitBook block syntax and formatting rules
 3. Check `.gitbook.yaml` — root path and redirects
 4. Read `CONTRIBUTING.md` — contributor safety and local GC2 reference setup
+5. Read `DOCUMENTATION-STRUCTURE.md` — GitBook space layout and Visual Scripting catalog rules
 
 ## Read-local / write-public
 
@@ -49,6 +50,7 @@ Contributors inspect **their own licensed** GC2 Unity install locally. This repo
 README.md                    # Homepage
 SUMMARY.md                   # Table of contents
 CONTRIBUTING.md                # Contributor guide (GitHub; not in GitBook nav)
+DOCUMENTATION-STRUCTURE.md     # Space layout and VS catalog rules (GitHub; not in GitBook nav)
 core-functionality/          # Audio, Saving, Variables
 gc2-core-demos/
 code/

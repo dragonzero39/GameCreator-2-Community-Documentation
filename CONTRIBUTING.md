@@ -6,6 +6,8 @@ This space is published on **GitBook** and synced with GitHub. You do **not** ne
 
 **What this project publishes:** Knowledge — guides, workflows, feature descriptions, and small illustrative examples.
 
+**Documentation layout:** Each GC2 plugin space uses four sections — Core Functionality, Demos, Code, and **Visual Scripting** (highest priority). See [DOCUMENTATION-STRUCTURE.md](DOCUMENTATION-STRUCTURE.md) for the full structure guide, page templates, and Visual Scripting catalog rules.
+
 ---
 
 ## The read-local / write-public model
@@ -88,6 +90,13 @@ Copy `gc2-docs.code-workspace.example` to `gc2-docs.code-workspace`, update the 
 ---
 
 ## Step 4: Write documentation
+
+Read [DOCUMENTATION-STRUCTURE.md](DOCUMENTATION-STRUCTURE.md) before adding or reorganizing pages. In short:
+
+- One GitBook **space per GC2 plugin** (Core, Inventory, Shooter, …).
+- Each space has **Core Functionality**, **GC2 \<Plugin\> Demos**, **Code**, and **Visual Scripting**.
+- **Visual Scripting comes first** — categorized catalogs of Triggers, Instructions, Conditions, and Signals, with details on behavior, inputs, and outputs.
+- Verify names and categories against your Unity picker or licensed local install; never commit plugin source.
 
 ### Allowed in contributions
 
