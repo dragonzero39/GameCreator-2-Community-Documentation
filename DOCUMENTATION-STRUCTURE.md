@@ -214,6 +214,9 @@ gc2-behavior/
 gc2-perception/
 gc2-traversal/
 gc2-abilities-external/            ← Third-party (not official GC2)
+gc2-arawn-agnostic-networking/       ← Arawn transport-agnostic core
+gc2-arawn-purrnet/                 ← Arawn PurrNet transport
+gc2-arawn-photon/                  ← Arawn Photon transport
 ```
 
 Each module folder contains:
@@ -279,7 +282,10 @@ Use `description` for Visual Scripting hub pages (e.g. Triggers overview).
 | **GC2 Perception** | Draft complete | Overview pages | Stubbed |
 | **GC2 Traversal** | Draft complete | Overview pages | Stubbed (verify locally) |
 | **GC2 Abilities (External)** | Placeholder | Scaffold only | Awaiting third-party contributors |
-| **Docs** (collection) | Draft complete | N/A | Links to all spaces |
+| **Arawn Agnostic Networking** | Draft complete | Scaffold only | Awaiting contributors |
+| **Arawn PurrNet Integration** | Draft complete | Scaffold only | Awaiting contributors |
+| **Arawn Photon Integration** | Draft complete | Scaffold only | Awaiting contributors |
+| **Docs** (collection) | Draft complete | N/A | Links to all spaces + Git Sync table |
 
 Use **GC2 Core** as the reference implementation for depth; other spaces follow the same layout.
 

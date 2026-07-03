@@ -39,11 +39,38 @@ Each **GitBook space** maps to a GC2 module (or topic). Every module space uses 
 
 | Space | Notes |
 |-------|-------|
-| [GC2 Abilities (External)](../gc2-abilities-external/README.md) | Third-party plugin — not part of official GC2 |
+| [GC2 Abilities (External)](../gc2-abilities-external/README.md) | Third-party abilities plugin |
+| [Arawn Agnostic Networking Layer](../gc2-arawn-agnostic-networking/README.md) | Transport-independent GC2 multiplayer core |
+| [Arawn PurrNet Integration](../gc2-arawn-purrnet/README.md) | PurrNet transport for Arawn networking |
+| [Arawn Photon Integration](../gc2-arawn-photon/README.md) | Photon transport for Arawn networking |
 
-Networking extensions (e.g. Arawn) are documented separately and are outside the scope of official GC2 module spaces.
+---
 
-## Contributing
+## Git Sync — project directory per space
+
+All spaces use the **same GitHub repo** and **`main` branch**. Each space sets a **Project directory** in GitBook (Settings → Integrations → Git Sync):
+
+| GitBook space | Project directory |
+|---------------|-------------------|
+| Docs | `docs` |
+| GC2 Core | `/` (repo root) |
+| GC2 Inventory | `gc2-inventory` |
+| GC2 Shooter | `gc2-shooter` |
+| GC2 Melee | `gc2-melee` |
+| GC2 Stats | `gc2-stats` |
+| GC2 Dialogue | `gc2-dialogue` |
+| GC2 Quests | `gc2-quests` |
+| GC2 Behavior | `gc2-behavior` |
+| GC2 Perception | `gc2-perception` |
+| GC2 Traversal | `gc2-traversal` |
+| GC2 Abilities (External) | `gc2-abilities-external` |
+| Arawn Agnostic Networking Layer | `gc2-arawn-agnostic-networking` |
+| Arawn PurrNet Integration | `gc2-arawn-purrnet` |
+| Arawn Photon Integration | `gc2-arawn-photon` |
+
+Do **not** point every space at repo root — that makes all spaces show Core navigation only.
+
+---
 
 - **GitBook editor** — edit directly in GitBook (no clone required)
 - **GitHub / Git Sync** — clone, edit markdown, run validators, open a PR
