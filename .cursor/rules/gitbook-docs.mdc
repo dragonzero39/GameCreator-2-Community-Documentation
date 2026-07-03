@@ -28,4 +28,5 @@ This repo is a GitBook space synced with GitHub. Read `skill.md` in the repo roo
 - No duplicate page entries in `SUMMARY.md`
 - Valid YAML frontmatter on pages that use it
 - Images reference `.gitbook/assets/` or valid external URLs
-- Run `scripts/validate-gitbook.ps1` before committing
+- Run `scripts/validate-all.ps1` before committing
+- See `CONTRIBUTING.md` and `contributor-safety.mdc` for local GC2 reference rules

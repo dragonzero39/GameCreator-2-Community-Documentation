@@ -18,7 +18,7 @@ Official reference (update periodically): https://gitbook.com/docs/creating-cont
 4. Check `.gitbook/vars.yaml` — space-level variables
 5. Check `.gitbook/assets/` — images and uploaded files
 6. Make edits; keep `SUMMARY.md` synchronized with file structure
-7. Run `scripts/validate-gitbook.ps1` before committing
+7. Run `scripts/validate-all.ps1` before committing
 8. Test rendering in GitBook after push
 
 ## File Structure
@@ -267,3 +267,5 @@ var x = 1;
 - [ ] Custom blocks are properly opened and closed
 - [ ] Variables reference correct scope (`space.vars` vs `page.vars`)
 - [ ] No duplicate page entries in `SUMMARY.md`
+- [ ] `scripts/validate-all.ps1` passes (GitBook blocks + contribution safety)
+- [ ] No `local.config.json`, absolute paths, or Unity/GC2 source files in the commit

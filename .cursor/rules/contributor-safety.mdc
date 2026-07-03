@@ -1,0 +1,30 @@
+---
+description: Block committing private GC2 source, local paths, and Unity artifacts
+globs: "**/*"
+alwaysApply: true
+---
+
+# Contributor Safety Rules
+
+Read `CONTRIBUTING.md` for the full guide. This repo is **public**; GC2 plugin source is **private**.
+
+## Boundaries
+
+- **Read** GC2 from the contributor's local Unity project (`local.config.json`, gitignored).
+- **Write** only sanitized markdown and assets to this repository.
+- Contributors edit via GitBook, GitHub web, or Git Sync — cloning is optional.
+
+## Never commit
+
+- `local.config.json`, `gc2-docs.code-workspace`
+- Unity/GC2 artifacts: `.cs`, `.meta`, `.unity`, `.asset`, `.csproj`, `.dll`, `Library/`, `Logs/`
+- Absolute paths: `C:\`, `D:\`, `/Users/`, `/home/`
+- `file://` URLs or `HintPath` project references
+
+## Before commit
+
+Run `scripts/validate-all.ps1` from the repository root.
+
+## Plugin setup
+
+Each contributor installs GC2 modules their own way (Asset Store, manual import, etc.). Do not document or assume one universal plugin path on disk beyond optional `local.config.json` on each machine.

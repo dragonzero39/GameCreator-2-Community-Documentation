@@ -1,0 +1,19 @@
+# Per-contributor local paths (never commit)
+local.config.json
+
+# Personal multi-root workspace (copy from .code-workspace.example)
+gc2-docs.code-workspace
+
+# Unity / plugin artifacts (must not enter this repo)
+Library/
+Logs/
+Temp/
+UserSettings/
+*.csproj
+*.sln
+*.cs
+*.meta
+*.unity
+*.asset
+*.dll
+*.pdb

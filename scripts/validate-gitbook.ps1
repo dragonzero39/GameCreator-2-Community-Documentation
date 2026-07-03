@@ -8,8 +8,12 @@ Get-ChildItem -Path $root -Recurse -Filter "*.md" |
         $content = Get-Content $_.FullName -Raw -ErrorAction SilentlyContinue
         if (-not $content) { return }
 
-        $opens = ([regex]::Matches($content, '\{%\s*(?!end)(\w+)')).Count
-        $closes = ([regex]::Matches($content, '\{%\s*end\w+')).Count
+        # Ignore tags inside fenced or inline code (e.g. skill.md syntax examples)
+        $contentForTags = $content -replace '(?s)`{3,}.*?`{3,}', ''
+        $contentForTags = $contentForTags -replace '`[^`]+`', ''
+
+        $opens = ([regex]::Matches($contentForTags, '\{%\s*(?!end)(\w+)')).Count
+        $closes = ([regex]::Matches($contentForTags, '\{%\s*end\w+')).Count
 
         if ($opens -ne $closes) {
             $relative = $_.FullName.Substring($root.Length + 1)
@@ -22,4 +26,4 @@ if ($errors) {
     exit 1
 }
 
-Write-Output "OK — all markdown files have balanced GitBook block tags."
+Write-Output "OK - all markdown files have balanced GitBook block tags."
