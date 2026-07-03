@@ -6,5 +6,3 @@ description: >-
 
 # Variables
 
-This is test text
-
