@@ -1,10 +1,1 @@
----
-description: >-
-  This section of the GC2 Community Documentation is focused on the core
-  functionality and code of GC2.
----
-
-# Game Creator 2 Core Functions
-
-Testing
-
+This is a Github Repository to connect GitBook GameCreator2 Community Documentation to Github for further contributions.
