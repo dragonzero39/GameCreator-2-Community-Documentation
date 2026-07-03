@@ -1,0 +1,13 @@
+{
+  "gc2UnityProjectPath": "C:/path/to/your/GC2-Knowledge-Build",
+  "installedModules": [
+    "Core",
+    "Inventory",
+    "Stats",
+    "Melee",
+    "Shooter",
+    "Behavior",
+    "Perception"
+  ],
+  "notes": "Copy this file to local.config.json and set paths for your machine. Never commit local.config.json."
+}

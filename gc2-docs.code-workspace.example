@@ -1,0 +1,13 @@
+{
+  "folders": [
+    {
+      "name": "GC2 Docs (GitBook)",
+      "path": "."
+    },
+    {
+      "name": "GC2 Knowledge Build (local only — do not commit)",
+      "path": "C:/path/to/your/GC2-Knowledge-Build"
+    }
+  ],
+  "settings": {}
+}
