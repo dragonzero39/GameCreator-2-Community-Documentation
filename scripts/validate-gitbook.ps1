@@ -27,3 +27,4 @@ if ($errors) {
 }
 
 Write-Output "OK - all markdown files have balanced GitBook block tags."
+exit 0

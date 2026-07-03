@@ -6,11 +6,12 @@ $root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
 
 # --- Banned file extensions anywhere in the repo ---
 $bannedExtensions = @(".cs", ".meta", ".unity", ".asset", ".csproj", ".dll", ".pdb", ".sln")
-$excludeDirs = @("\.git\", "\.gitbook\", "node_modules")
+$excludeDirNames = @(".git", ".gitbook", "node_modules")
 
 Get-ChildItem -Path $root -Recurse -File | ForEach-Object {
     $relative = $_.FullName.Substring($root.Length + 1)
-    if ($excludeDirs | Where-Object { $relative -match $_ }) { return }
+    $pathParts = $relative -split '[\\/]'
+    if ($excludeDirNames | Where-Object { $pathParts -contains $_ }) { return }
 
     $ext = $_.Extension.ToLowerInvariant()
     if ($bannedExtensions -contains $ext) {
@@ -44,7 +45,8 @@ $maxCodeBlockLines = 100
 $textExtensions = @(".md", ".json", ".yaml", ".yml", ".txt")
 Get-ChildItem -Path $root -Recurse -File | ForEach-Object {
     $relative = $_.FullName.Substring($root.Length + 1).Replace("\", "/")
-    if ($excludeDirs | Where-Object { $relative -match $_ }) { return }
+    $pathParts = $relative -split '[\\/]'
+    if ($excludeDirNames | Where-Object { $pathParts -contains $_ }) { return }
     if ($textExtensions -notcontains $_.Extension.ToLowerInvariant()) { return }
 
   $normalizedRelative = $relative.Replace("/", "\")
@@ -95,3 +97,4 @@ if ($errors) {
 }
 
 Write-Output "OK - contribution safety checks passed."
+exit 0
