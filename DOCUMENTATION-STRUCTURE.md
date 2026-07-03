@@ -197,18 +197,37 @@ Assets/Plugins/GameCreator/Packages/<Module>/Runtime/VisualScripting/
 
 ## File and navigation conventions (Git Sync)
 
-This repository currently syncs the **GC2 Core** space. As more plugin spaces are added, use a **consistent folder per space**:
+**GC2 Core** syncs from the **repository root** (`README.md`, `SUMMARY.md`, and section folders).
+
+Other module spaces live in sibling folders with the same internal layout:
+
+```
+README.md / SUMMARY.md / …         ← GC2 Core (GitBook root sync)
+docs/README.md                     ← Collection overview (Docs space)
+gc2-inventory/                     ← GC2 Inventory space
+gc2-shooter/
+gc2-melee/
+gc2-stats/
+gc2-dialogue/
+gc2-quests/
+gc2-behavior/
+gc2-perception/
+gc2-traversal/
+gc2-abilities-external/            ← Third-party (not official GC2)
+```
+
+Each module folder contains:
 
 ```
 README.md                          ← space homepage
-SUMMARY.md                         ← sidebar (four sections per plugin)
+SUMMARY.md                         ← sidebar (four sections)
 core-functionality/
-gc2-core-demos/
+gc2-<module>-demos/
 code/
 visual-scripting/
 ```
 
-For additional plugins, mirror the same layout (either separate repos/spaces or prefixed folders — keep **SUMMARY.md** aligned with GitBook).
+Configure each GitBook space Git Sync to point at the matching folder (Core uses repo root). Keep **SUMMARY.md** aligned with GitBook per space.
 
 ### SUMMARY.md rules
 
@@ -245,16 +264,24 @@ Use `description` for Visual Scripting hub pages (e.g. Triggers overview).
 
 ---
 
-## Current status (GC2 Core)
+## Current status
 
-| Section | Status |
-|---------|--------|
-| Core Functionality | Audio, Saving, Variables — started |
-| GC2 Core Demos | Placeholder |
-| Code | Placeholder |
-| Visual Scripting | Triggers — categorized catalog started; Instructions, Conditions, Signals — to be populated |
+| Space | Homepage | Section scaffolds | VS catalogs |
+|-------|----------|-------------------|-------------|
+| **GC2 Core** (root) | Draft complete | Audio, Saving, Variables + overviews | Triggers started; Instructions/Conditions stubbed |
+| **GC2 Inventory** | Draft complete | Overview pages | Stubbed |
+| **GC2 Shooter** | Draft complete | Overview pages | Stubbed |
+| **GC2 Melee** | Draft complete | Overview pages | Stubbed |
+| **GC2 Stats** | Draft complete | Overview pages | Stubbed |
+| **GC2 Dialogue** | Draft complete | Overview pages | Stubbed (verify locally) |
+| **GC2 Quests** | Draft complete | Overview pages | Stubbed (verify locally) |
+| **GC2 Behavior** | Draft complete | Overview pages | Stubbed |
+| **GC2 Perception** | Draft complete | Overview pages | Stubbed |
+| **GC2 Traversal** | Draft complete | Overview pages | Stubbed (verify locally) |
+| **GC2 Abilities (External)** | Placeholder | Scaffold only | Awaiting third-party contributors |
+| **Docs** (collection) | Draft complete | N/A | Links to all spaces |
 
-Use this space as the **reference implementation** for other plugin spaces.
+Use **GC2 Core** as the reference implementation for depth; other spaces follow the same layout.
 
 ---
 

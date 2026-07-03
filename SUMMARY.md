@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Game Creator 2 Core Functions](README.md)
+* [Game Creator 2 Core](README.md)
 
 ## Core Functionality
 
@@ -10,14 +10,16 @@
 
 ## GC2 Core Demos
 
-* [Page 1](gc2-core-demos/page-1.md)
+* [Overview](gc2-core-demos/overview.md)
 
 ## Code
 
-* [Page 2](code/page-2.md)
+* [Overview](code/overview.md)
 
 ## Visual Scripting
 
 * [Triggers](visual-scripting/triggers.md)
-* [Cameras](visual-scripting/cameras.md)
+* [Instructions](visual-scripting/instructions.md)
+* [Conditions](visual-scripting/conditions.md)
 * [Signals](visual-scripting/signals.md)
+* [Cameras](visual-scripting/cameras.md)
