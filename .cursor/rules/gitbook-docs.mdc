@@ -1,0 +1,31 @@
+---
+description: GitBook markdown syntax and Git Sync conventions for this docs repo
+globs: "{**/*.md,SUMMARY.md,.gitbook.yaml,.gitbook/**/*.yaml}"
+alwaysApply: false
+---
+
+# GitBook Documentation Rules
+
+This repo is a GitBook space synced with GitHub. Read `skill.md` in the repo root for full syntax.
+
+## Before structural changes
+
+1. Read `SUMMARY.md` first
+2. Check `.gitbook.yaml` for root path and redirects
+3. Check `.gitbook/vars.yaml` if using space variables
+
+## When editing
+
+- Keep `SUMMARY.md` synchronized with new, moved, or renamed pages
+- Use relative paths for internal links (e.g. `[text](core-functionality/audio.md)`)
+- Close all `{% %}` custom blocks (`{% endtab %}`, `{% endhint %}`, etc.)
+- Put space variables in `.gitbook/vars.yaml`; page variables in frontmatter `vars:`
+- Never embed OpenAPI specs in markdown — upload via GitBook API/CLI/UI
+- Manage `README.md` only in this repository, not via GitBook UI
+
+## Pre-commit checks
+
+- No duplicate page entries in `SUMMARY.md`
+- Valid YAML frontmatter on pages that use it
+- Images reference `.gitbook/assets/` or valid external URLs
+- Run `scripts/validate-gitbook.ps1` before committing
