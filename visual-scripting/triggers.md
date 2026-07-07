@@ -5,133 +5,17 @@ icon: star
 
 # Triggers
 
+Trigger events start a visual scripting graph when something happens in your game. Events are grouped by category below. Camera events have dedicated pages under [Camera Triggers](cameras.md); see also [Cameras (Core Functionality)](../core-functionality/cameras.md) for how the camera system works.
 
+## Core Camera Triggers
 
-<details>
+Camera events react when the [camera system](../core-functionality/cameras.md) switches shots. See [Camera Triggers](cameras.md) for an overview, or open each event below.
 
-<summary>Core Camera Triggers</summary>
-
-On Camera Change · On Change to Shot · On Change from Shot
-
-Game Creator 2 cameras use a **Main Camera** (`TCamera`) that blends between **Shot Camera** components. Shot switches are usually started with the [**Change to Shot**](instructions.md) instruction (Cameras → Change to Shot).
-
-```mermaid
-sequenceDiagram
-    participant Action as Change to Shot
-    participant Cam as Main Camera
-    participant ShotA as Shot A
-    participant ShotB as Shot B
-    participant Trig as Triggers
-
-    Action->>Cam: ChangeToShot(B, duration)
-    Cam->>ShotA: Deactivate
-    ShotA->>Trig: On Change from Shot (A)
-    Cam->>ShotB: Activate
-    ShotB->>Trig: On Change to Shot (B)
-    Cam->>Trig: On Camera Change
-```
-
-| | On Camera Change | On Change to Shot | On Change from Shot |
-| -- | -- | -- | -- |
-| **Watches** | Main Camera | One Shot Camera | One Shot Camera |
-| **Fires when** | Any shot switch on that camera | That shot becomes active | That shot becomes inactive |
-| **Cut vs transition** | Filterable | Both | Both |
-| **Best for** | Global camera reactions | Entering a specific angle | Leaving a specific angle |
-
-<details>
-
-<summary>On Camera Change</summary>
-
-**Type:** Trigger event\
-**Category:** Cameras / On Camera Change\
-**Component:** Trigger (on any Game Object)
-
-**Summary:** Runs when the selected Main Camera switches to a different Shot Camera.
-
-**When it runs:** Whenever a shot change is committed on that camera—either an instant **cut** (zero duration) or a **transition** (duration greater than zero). Use **When** to listen to all changes, cuts only, or transitions only.
-
-**Requirements:** **Camera** must reference a GameObject with a **Main Camera** (`TCamera`) component. If the reference is missing or invalid, the event never fires.
-
-**Inputs (inspector fields):**
-
-| Field | Default | Purpose |
-| -- | -- | -- |
-| **Camera** | Main Camera | Which camera rig to watch |
-| **When** | Any Change | **Any Change**, **On Cut**, or **On Transition** |
-
-{% hint style="info" %}
-**Cut** = instant switch (duration ≈ 0). **Transition** = blended switch over time with easing. Set **When** to **On Transition** for cinematic blends only, or **On Cut** for snap changes only.
-{% endhint %}
-
-**Outputs / context:** **Self** is the GameObject with the Trigger component. The new or previous shot is not passed into the graph automatically—use Game Object getters in Actions if needed.
-
-**Notes:** Fires at the **start** of the switch, not when a transition finishes.
-
-**Related:** [Change to Shot](instructions.md) · On Change to Shot · On Change from Shot
-
-</details>
-
-<details>
-
-<summary>On Change to Shot</summary>
-
-**Type:** Trigger event\
-**Category:** Cameras / On Change to Shot\
-**Component:** Trigger (on any Game Object)
-
-**Summary:** Runs when the specified Shot Camera becomes the active shot on a Main Camera.
-
-**When it runs:** After the previous shot is deactivated and this shot is enabled. Fires for both cuts and transitions.
-
-**Requirements:** **Camera Shot** must reference a GameObject with a **Shot Camera** component.
-
-**Inputs (inspector fields):**
-
-| Field | Default | Purpose |
-| -- | -- | -- |
-| **Camera Shot** | (instance) | The shot to watch—drag from the hierarchy or use a variable |
-
-**Typical uses:** Enable shot-specific UI, start ambient audio, show prompts, or set global variables when entering a cinematic or gameplay angle.
-
-**Notes:** Pair with **On Change from Shot** on the same shot for enter/exit logic. Use **On Camera Change** on the Main Camera when you need one reaction for every switch.
-
-**Related:** On Change from Shot · On Camera Change · [Change to Shot](instructions.md)
-
-</details>
-
-<details>
-
-<summary>On Change from Shot</summary>
-
-**Type:** Trigger event\
-**Category:** Cameras / On Change from Shot\
-**Component:** Trigger (on any Game Object)
-
-**Summary:** Runs when the specified Shot Camera stops being the active shot.
-
-**When it runs:** When another shot replaces this one. Runs **before** the new shot's **On Change to Shot**.
-
-**Requirements:** **Camera Shot** must reference a GameObject with a **Shot Camera** component.
-
-**Inputs (inspector fields):**
-
-| Field | Default | Purpose |
-| -- | -- | -- |
-| **Camera Shot** | (instance) | The shot that is leaving |
-
-**Typical uses:** Hide shot-specific UI, stop localized audio, reset overrides, or save state when leaving an inspection or aim camera.
-
-**Notes:** Use for cleanup; use **On Change to Shot** for setup on the same shot.
-
-**Related:** On Change to Shot · On Camera Change
-
-</details>
-
-{% hint style="warning" %}
-If **Camera** or **Camera Shot** does not resolve to the correct component, the trigger subscribes to nothing and **never runs**—no error is shown in Play Mode.
-{% endhint %}
-
-</details>
+| Trigger | Description |
+| ------- | ----------- |
+| [On Camera Change](triggers/on-camera-change.md) | Any shot switch on a Main Camera (filter by cut or transition) |
+| [On Change to Shot](triggers/on-change-to-shot.md) | A specific Shot Camera becomes active |
+| [On Change from Shot](triggers/on-change-from-shot.md) | A specific Shot Camera becomes inactive |
 
 
 
