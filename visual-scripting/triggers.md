@@ -5,7 +5,21 @@ icon: star
 
 # Triggers
 
-Trigger events start a visual scripting graph when something happens in your game. Events are grouped by category below. Camera events have dedicated pages under [Camera Triggers](cameras.md); see also [Cameras (Core Functionality)](../core-functionality/cameras.md) for how the camera system works.
+Trigger events start a visual scripting graph when something happens in your game. Add a **Trigger** component, pick an **Event** from the category list, then attach **Actions** that run when the event fires.
+
+## Documented trigger categories
+
+These categories have dedicated overview pages and per-event reference docs. More categories will follow the same pattern.
+
+| Category | Overview | Core Functionality |
+| -------- | -------- | ------------------ |
+| **Cameras** | [Camera Triggers](cameras.md) | [Cameras](../core-functionality/cameras.md) |
+| **Audio** | [Audio Triggers](audio.md) | [Audio](../core-functionality/audio.md) |
+| **Characters** | [Character Triggers](characters.md) | [Characters](../core-functionality/characters.md) |
+
+Jump to catalog sections: [Core Camera Triggers](#core-camera-triggers) · [Core Audio Triggers](#core-audio-triggers) · [Core Character Triggers](#core-character-triggers)
+
+---
 
 ## Core Camera Triggers
 
@@ -17,45 +31,38 @@ Camera events react when the [camera system](../core-functionality/cameras.md) s
 | [On Change to Shot](triggers/on-change-to-shot.md) | A specific Shot Camera becomes active |
 | [On Change from Shot](triggers/on-change-from-shot.md) | A specific Shot Camera becomes inactive |
 
-
-
 <details>
 
 <summary>Core Audio Triggers</summary>
 
-On Change Ambient Volume
+Volume events react when an audio channel or master level changes. See [Audio Triggers](audio.md) and [Audio (Core Functionality)](../core-functionality/audio.md).
 
-On Change Master Volume
-
-On Change Music Volume
-
-On Change Sound Effects Volume
-
-On Change Speech Volume
-
-On Change UI Volume
+| Trigger | Description |
+| ------- | ----------- |
+| [On Change Ambient Volume](triggers/on-change-ambient-volume.md) | Ambient channel volume changes |
+| [On Change Master Volume](triggers/on-change-master-volume.md) | Master volume changes (all channels) |
+| [On Change Music Volume](triggers/on-change-music-volume.md) | Music channel volume changes |
+| [On Change Sound Effects Volume](triggers/on-change-sound-effects-volume.md) | Sound Effects channel volume changes |
+| [On Change Speech Volume](triggers/on-change-speech-volume.md) | Speech channel volume changes |
+| [On Change UI Volume](triggers/on-change-ui-volume.md) | UI channel volume changes |
 
 </details>
-
-
 
 <details>
 
 <summary>Core Character Triggers</summary>
 
-On Become NPC
+Root-level character lifecycle events. See [Character Triggers](characters.md) and [Characters (Core Functionality)](../core-functionality/characters.md).
 
-On Become Player
-
-On Change Model
-
-On Die
-
-On Revive
+| Trigger | Description |
+| ------- | ----------- |
+| [On Become NPC](triggers/on-become-npc.md) | This Character stops being the Player |
+| [On Become Player](triggers/on-become-player.md) | This Character becomes the Player |
+| [On Change Model](triggers/on-change-model.md) | This Character's model is swapped |
+| [On Die](triggers/on-die.md) | This Character enters death state |
+| [On Revive](triggers/on-revive.md) | This Character revives from death |
 
 </details>
-
-
 
 <details>
 
@@ -75,8 +82,6 @@ On Target Change
 
 </details>
 
-
-
 <details>
 
 <summary>Core Character Navigation Triggers</summary>
@@ -91,8 +96,6 @@ On Step
 
 </details>
 
-
-
 <details>
 
 <summary>Core  Character Ragdoll Triggers</summary>
@@ -102,8 +105,6 @@ On Recover Ragdoll
 On Start Ragdoll
 
 </details>
-
-
 
 <details>
 
@@ -118,8 +119,6 @@ On Input Flick
 On Touch
 
 </details>
-
-
 
 <details>
 
@@ -153,8 +152,6 @@ On Update
 
 </details>
 
-
-
 <details>
 
 <summary>Core Interactive Triggers</summary>
@@ -166,12 +163,3 @@ On Focus
 On Interact
 
 </details>
-
-
-
-
-
-
-
-
-
