@@ -22,5 +22,5 @@
 * [Instructions](server-authoritative/visual-scripting/instructions.md)
 * [Conditions](server-authoritative/visual-scripting/conditions.md)
 * [Edgegap](server-authoritative/edgegap/overview.md)
-  * [Configuration and Setup](server-authoritative/edgegap/configuration-and-setup.md)
-  * [Matchmaking](server-authoritative/edgegap/matchmaking.md)
+  * [Server Authoritative Setup (PurrNet + Unity)](server-authoritative/edgegap/server-authoritative-setup.md)
+  * [Edgegap Matchmaking](server-authoritative/edgegap/matchmaking.md)

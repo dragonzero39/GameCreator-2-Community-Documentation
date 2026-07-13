@@ -1,15 +1,15 @@
 ---
 description: >-
-  Full Edgegap matchmaking for server-authoritative GC2 / Arawn / PurrNet games —
+  Edgegap Matchmaking for server-authoritative GC2 / Arawn / PurrNet Unity games —
   profiles, rules, parties, expansions, connect flow, and backfill.
 ---
 
-# Edgegap — Matchmaking
+# Edgegap Matchmaking
 
-This page teaches you how to run a **complete server-authoritative matchmaking system** with Edgegap: players queue with real game rules, Edgegap starts a **dedicated server Deployment**, everyone receives connection details, your **PurrNet + Arawn** clients join, the match plays, leavers can be replaced, and empty servers shut down.
+This page teaches you how to run a **complete server-authoritative matchmaking system** with Edgegap: players queue with real game rules, Edgegap starts a **dedicated server Deployment**, everyone receives connection details, your **PurrNet + Arawn** Unity clients join, the match plays, leavers can be replaced, and empty servers shut down.
 
 {% hint style="danger" %}
-**Prerequisite:** Finish [Configuration and Setup](configuration-and-setup.md) until a **manual** cloud Deployment accepts your client. Matchmaking only automates that last mile — it cannot fix a broken server image.
+**Prerequisite:** Finish [Server Authoritative Setup (PurrNet + Unity)](server-authoritative-setup.md) until a **manual** cloud Deployment accepts your client. Matchmaking only automates that last mile — it cannot fix a broken server image.
 {% endhint %}
 
 {% hint style="info" %}
@@ -586,7 +586,7 @@ Edgegap recommends multiple matchmaker instances (for example `green`, `blue`, `
 
 | Concern | Where it lives here |
 |---------|---------------------|
-| Build & upload dedicated server | [Configuration and Setup](configuration-and-setup.md) |
+| Build & upload dedicated server | [Server Authoritative Setup (PurrNet + Unity)](server-authoritative-setup.md) |
 | Queue rules & player flow | This page |
 | Arawn / PurrNet authority & bridges | [Server Authoritative Core Functionality](../core-functionality/overview.md) |
 | Future Visual Scripting “Find Match / Connect” actions | [Instructions](../visual-scripting/instructions.md) (catalog later) |

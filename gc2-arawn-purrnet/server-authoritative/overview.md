@@ -42,8 +42,8 @@ Exact wizard/menu steps and GC2 Visual Scripting entries will be documented unde
 | [Instructions](visual-scripting/instructions.md) | Connect, deploy, matchmaking-related Instructions |
 | [Conditions](visual-scripting/conditions.md) | Server role, ready-state, and authority Conditions |
 | [Edgegap](edgegap/overview.md) | Cloud hosting hub for dedicated servers |
-| → [Configuration and Setup](edgegap/configuration-and-setup.md) | Account, Linux build, Docker, App Version, first cloud deploy |
-| → [Matchmaking](edgegap/matchmaking.md) | Full queue → deploy → connect → backfill system |
+| → [Server Authoritative Setup (PurrNet + Unity)](edgegap/server-authoritative-setup.md) | Account, Linux build, Docker, App Version, first cloud deploy |
+| → [Edgegap Matchmaking](edgegap/matchmaking.md) | Full queue → deploy → connect → backfill system |
 
 ## Related external docs
 

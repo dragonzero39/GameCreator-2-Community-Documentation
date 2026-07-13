@@ -57,8 +57,8 @@ sequenceDiagram
   Server-->>Client: Authoritative gameplay
 ```
 
-1. You **build** a Linux dedicated server and **upload** it as an App Version ([Configuration and Setup](configuration-and-setup.md)).
-2. Players **queue** through Matchmaking; Edgegap **starts** a Deployment when a match is ready ([Matchmaking](matchmaking.md)).
+1. You **build** a Linux dedicated server and **upload** it as an App Version ([Server Authoritative Setup](server-authoritative-setup.md)).
+2. Players **queue** through Matchmaking; Edgegap **starts** a Deployment when a match is ready ([Edgegap Matchmaking](matchmaking.md)).
 3. Clients **connect** to the assigned host/port using your PurrNet + Arawn networking stack.
 4. When the match ends, you **stop** the Deployment so you are not charged for an empty server.
 
@@ -66,8 +66,8 @@ sequenceDiagram
 
 | Page | Use it for |
 |------|------------|
-| [Configuration and Setup](configuration-and-setup.md) | Accounts, Unity tools, Linux build, Docker, App Versions, first cloud Deployment, client connect test |
-| [Matchmaking](matchmaking.md) | Full server-authoritative matchmaking: profiles, rules, parties, expansions, connect flow, backfill, server injection |
+| [Server Authoritative Setup (PurrNet + Unity)](server-authoritative-setup.md) | Accounts, Unity tools, Linux build, Docker, App Versions, first cloud Deployment, client connect test |
+| [Edgegap Matchmaking](matchmaking.md) | Full server-authoritative matchmaking: profiles, rules, parties, expansions, connect flow, backfill, server injection |
 
 ## Official references
 

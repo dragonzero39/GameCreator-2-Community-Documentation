@@ -1,12 +1,12 @@
 ---
 description: >-
-  Beginner guide to configuring Edgegap for Unity dedicated servers — account,
-  Linux build, Docker, App Versions, and first cloud deploy.
+  Server-authoritative setup for PurrNet and Unity on Edgegap — account, Linux
+  dedicated build, Docker, App Versions, and first cloud deploy.
 ---
 
-# Edgegap — Configuration and Setup
+# Server Authoritative Setup (PurrNet + Unity)
 
-This page walks you from **zero cloud servers** to a **working dedicated server on Edgegap** that a Game Creator 2 / Arawn / PurrNet client can join.
+This page walks you from **zero cloud servers** to a **working dedicated server on Edgegap** that a Game Creator 2 / Arawn / **PurrNet** client can join.
 
 You do **not** need to be a cloud engineer. You do need:
 
@@ -43,7 +43,7 @@ Official source of truth for button labels and plugin menus: [Unity — Getting 
 {% endstep %}
 {% endstepper %}
 
-When those six work, move to [Matchmaking](matchmaking.md) so players never paste IP addresses by hand.
+When those six work, move to [Edgegap Matchmaking](matchmaking.md) so players never paste IP addresses by hand.
 
 ---
 
@@ -297,7 +297,7 @@ Disable VPN while testing latency-sensitive placement. Also turn off netcode “
 
 ### Manual deploy is only a learning step
 
-Starting Deployments by hand is how you prove the pipeline. A live game should **automate** starts via [Matchmaking](matchmaking.md) (or Server Browser / custom backend). Players should never type FQDNs.
+Starting Deployments by hand is how you prove the pipeline. A live game should **automate** starts via [Edgegap Matchmaking](matchmaking.md) (or Server Browser / custom backend). Players should never type FQDNs.
 
 ---
 
@@ -317,7 +317,7 @@ Checklist before Matchmaking:
 
 Every Deployment can read environment variables Edgegap injects (deployment id, ports mapping, location, and — once Matchmaking is used — ticket/match data). Unity servers typically call `Environment.GetEnvironmentVariable(...)`. Edgegap’s Unity SDK `DeploymentAgent` samples show typed helpers.
 
-You will use these heavily in [Matchmaking](matchmaking.md) so the server knows who was matched and with which attributes.
+You will use these heavily in [Edgegap Matchmaking](matchmaking.md) so the server knows who was matched and with which attributes.
 
 ### Separate client and server projects/builds
 
@@ -358,6 +358,6 @@ Community help: Edgegap Discord (linked from their docs).
 
 ## Next step
 
-When cloud join works end-to-end, implement a full queue → match → deploy → connect → end-match loop in [Matchmaking](matchmaking.md).
+When cloud join works end-to-end, implement a full queue → match → deploy → connect → end-match loop in [Edgegap Matchmaking](matchmaking.md).
 
 Official deep links: [Unity Getting Started](https://docs.edgegap.com/unity) · [Deployments](https://docs.edgegap.com/learn/orchestration/deployments)
