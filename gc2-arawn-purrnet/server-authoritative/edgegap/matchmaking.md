@@ -16,9 +16,26 @@ This page teaches you how to run a **complete server-authoritative matchmaking s
 Official references: [Matchmaking overview](https://docs.edgegap.com/learn/matchmaking) · [Matchmaker in depth](https://docs.edgegap.com/learn/matchmaking/matchmaker-in-depth) · [Ping Beacons](https://docs.edgegap.com/learn/orchestration/ping-beacons). Feature names and API fields follow Edgegap; always verify against their current docs when integrating.
 {% endhint %}
 
+## Directory
+
+1. [Introduction](#introduction)
+2. [Required knowledge](#required-knowledge)
+3. [End-to-end player journey](#end-to-end-player-journey)
+4. [Building blocks](#building-blocks)
+5. [Matchmaking rules](#matchmaking-rules)
+6. [Rule expansions](#rule-expansions)
+7. [Parties, lobbies, and play with friends](#parties-lobbies-and-play-with-friends)
+8. [Client integration checklist](#client-integration-checklist)
+9. [Server integration checklist](#server-integration-checklist)
+10. [Backfill](#backfill)
+11. [Production configuration strategy](#production-configuration-strategy)
+12. [Soft-launch and live ops](#soft-launch-and-live-ops)
+13. [How this maps to this GitBook space](#how-this-maps-to-this-gitbook-space)
+14. [Next actions for your project](#next-actions-for-your-project)
+
 ---
 
-## What matchmaking is (in plain language)
+## Introduction
 
 Imagine a smart receptionist for online matches:
 
@@ -43,7 +60,22 @@ After release, the Matchmaker service should run **24/7** so players worldwide c
 
 ---
 
-## End-to-end player journey (production shape)
+## Required knowledge
+
+Before you implement Matchmaking, you should already understand and have working:
+
+1. **Server Authoritative topology** — a dedicated Linux server owns gameplay authority; clients do not host the match. See [Server Authoritative Overview](../overview.md).
+2. **A working Edgegap server pipeline** — Linux dedicated build → Docker image → App Version → manual cloud Deployment → client join with FQDN + external port. Follow [Server Authoritative Setup (PurrNet + Unity)](server-authoritative-setup.md) until that works.
+3. **PurrNet + Arawn connect path** — your Unity client can point its transport at a host and port and join that dedicated server.
+4. **Your game’s match design on paper** — team sizes, casual vs ranked, maps/modes, whether friends queue together, and whether leavers get replaced mid-match.
+
+{% hint style="warning" %}
+If manual cloud join still fails, stop here and fix setup first. Matchmaking will only hide the same failure behind a queue UI.
+{% endhint %}
+
+---
+
+## End-to-end player journey
 
 ```mermaid
 sequenceDiagram
@@ -134,7 +166,7 @@ Authorization: <your-matchmaker-auth-token>
 
 ---
 
-## Matchmaking rules (the heart of your game design)
+## Matchmaking rules
 
 All rules under `rules.initial` must pass **at the same time** for players to be matched.
 
@@ -200,7 +232,7 @@ Servers advertise remaining capacity through backfill tickets (see [Backfill](#b
 
 ---
 
-## Rule expansions — soft start, then widen the net
+## Rule expansions
 
 **Expansions** change rule attributes after the player has waited a number of seconds. That keeps early matches high quality, then gradually allows longer queues to still find a game.
 
@@ -221,7 +253,7 @@ Design expansions on paper with your designers before coding UI. Bad expansions 
 
 ---
 
-## Parties, lobbies, and “play with friends”
+## Parties, lobbies, and play with friends
 
 ### Matchmaker Group vs Lobby
 
@@ -252,7 +284,7 @@ Solo players: create a group with a single ready membership so they queue alone.
 
 ---
 
-## Client integration checklist (full system)
+## Client integration checklist
 
 You can use Edgegap’s **Unity SDK** matchmaking samples as a starting skeleton, then replace “demo UI” with your real menus. The **behaviors** below are what a shipped game needs — not a two-ticket Swagger smoke test.
 
@@ -293,7 +325,7 @@ You can use Edgegap’s **Unity SDK** matchmaking samples as a starting skeleton
 
 ---
 
-## Server integration checklist (authority side)
+## Server integration checklist
 
 ### Injected Matchmaker variables
 
@@ -332,7 +364,7 @@ Empty or finished matches should **stop the Deployment**. Otherwise costs climb 
 
 ---
 
-## Backfill — replace leavers and fill seats
+## Backfill
 
 **Backfill** is a **server-owned** ticket that represents “this running match still needs players.” New solo/party tickets can match into that backfill instead of only starting brand-new servers.
 
@@ -362,7 +394,7 @@ To **only** join existing matches (never start new ones from that queue behavior
 
 ---
 
-## Production configuration strategy (full system, not a toy queue)
+## Production configuration strategy
 
 Below is a **teaching configuration** that combines the pieces a real game uses: multiple rules, expansions, and backfill hooks. Replace `application.name` / `version` with **your** Edgegap App Version. Adjust team sizes and thresholds to your design.
 
