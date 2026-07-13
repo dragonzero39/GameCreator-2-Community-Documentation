@@ -21,3 +21,6 @@
 * [Triggers](server-authoritative/visual-scripting/triggers.md)
 * [Instructions](server-authoritative/visual-scripting/instructions.md)
 * [Conditions](server-authoritative/visual-scripting/conditions.md)
+* [Edgegap](server-authoritative/edgegap/overview.md)
+  * [Server Authoritative Setup (PurrNet + Unity)](server-authoritative/edgegap/server-authoritative-setup.md)
+  * [Edgegap Matchmaking](server-authoritative/edgegap/matchmaking.md)

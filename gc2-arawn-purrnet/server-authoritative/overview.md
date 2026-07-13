@@ -41,8 +41,12 @@ Exact wizard/menu steps and GC2 Visual Scripting entries will be documented unde
 | [Triggers](visual-scripting/triggers.md) | Dedicated/server-lifecycle Trigger events |
 | [Instructions](visual-scripting/instructions.md) | Connect, deploy, matchmaking-related Instructions |
 | [Conditions](visual-scripting/conditions.md) | Server role, ready-state, and authority Conditions |
+| [Edgegap](edgegap/overview.md) | Cloud hosting hub for dedicated servers |
+| → [Server Authoritative Setup (PurrNet + Unity)](edgegap/server-authoritative-setup.md) | Account, Linux build, Docker, App Version, first cloud deploy |
+| → [Edgegap Matchmaking](edgegap/matchmaking.md) | Full queue → deploy → connect → backfill system |
 
 ## Related external docs
 
 - [Edgegap — Getting Started](https://docs.edgegap.com/)
 - [Edgegap — Unity Getting Started](https://docs.edgegap.com/unity)
+- [Edgegap — Matchmaking](https://docs.edgegap.com/learn/matchmaking)

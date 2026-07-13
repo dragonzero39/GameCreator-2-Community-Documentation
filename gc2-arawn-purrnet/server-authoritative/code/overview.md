@@ -14,6 +14,8 @@ description: Server-authoritative PurrNet APIs, server build, and hosting hooks.
 
 Keep snippets minimal — see [CONTRIBUTING.md](../../../CONTRIBUTING.md).
 
-External hosting references: [Edgegap docs](https://docs.edgegap.com/), [Unity on Edgegap](https://docs.edgegap.com/unity).
+Community walkthroughs in this space: [Server Authoritative Setup (PurrNet + Unity)](../edgegap/server-authoritative-setup.md), [Edgegap Matchmaking](../edgegap/matchmaking.md).
+
+External hosting references: [Edgegap docs](https://docs.edgegap.com/), [Unity on Edgegap](https://docs.edgegap.com/unity), [Matchmaker in depth](https://docs.edgegap.com/learn/matchmaking/matchmaker-in-depth).
 
 Return to [Server Authoritative overview](../overview.md).
