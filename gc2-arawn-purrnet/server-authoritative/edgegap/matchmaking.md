@@ -284,7 +284,7 @@ Solo players: create a group with a single ready membership so they queue alone.
 
 ---
 
-## Client integration checklist (full system)
+## Client integration checklist
 
 You can use Edgegap’s **Unity SDK** matchmaking samples as a starting skeleton, then replace “demo UI” with your real menus. The **behaviors** below are what a shipped game needs — not a two-ticket Swagger smoke test.
 
@@ -325,7 +325,7 @@ You can use Edgegap’s **Unity SDK** matchmaking samples as a starting skeleton
 
 ---
 
-## Server integration checklist (authority side)
+## Server integration checklist
 
 ### Injected Matchmaker variables
 
