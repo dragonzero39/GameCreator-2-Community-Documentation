@@ -77,7 +77,8 @@ Each mode mirrors the same documentation framework:
 
 - [Arawn Agnostic Networking Layer](../gc2-arawn-agnostic-networking/README.md) — transport-independent core
 - [Arawn Photon Integration](../gc2-arawn-photon/README.md) — alternative transport
-- [Edgegap documentation](https://docs.edgegap.com/) — dedicated server hosting and orchestration (Server Authoritative path)
+- [Edgegap in this space](server-authoritative/edgegap/overview.md) — [Configuration and Setup](server-authoritative/edgegap/configuration-and-setup.md) · [Matchmaking](server-authoritative/edgegap/matchmaking.md)
+- [Edgegap documentation](https://docs.edgegap.com/) — upstream dedicated server hosting and orchestration
 
 ## Documentation status
 

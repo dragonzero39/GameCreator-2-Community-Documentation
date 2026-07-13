@@ -17,10 +17,10 @@ Third-party Arawn / PurrNet — document from your licensed local install only. 
 - Packet flow: client input → server authority → state broadcast
 - Ownership mapping without a listen-server player-host
 - Session profiles tuned for dedicated tick rates
-- Cloud deploy concepts: container image, application version, deployment lifecycle
-- Matchmaking / server browser handoff (links to host docs; local GC2 wiring)
+- Cloud deploy concepts: container image, application version, deployment lifecycle — detailed beginner walkthrough in [Edgegap → Configuration and Setup](../edgegap/configuration-and-setup.md)
+- Matchmaking / server browser handoff — full production queue design in [Edgegap → Matchmaking](../edgegap/matchmaking.md)
 - Observability: logs, connection quality, stop/restart behavior
 
 Shared transport pieces (bridge families, motion anchors) may overlap with [Peer to Peer Core Functionality](../../peer-to-peer/core-functionality/overview.md); document **differences** here rather than duplicating entire catalogs.
 
-See the [Server Authoritative overview](../overview.md) and the [space homepage](../../README.md).
+See the [Server Authoritative overview](../overview.md), [Edgegap](../edgegap/overview.md), and the [space homepage](../../README.md).
