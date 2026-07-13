@@ -36,6 +36,10 @@ Each plugin space uses this sidebar structure:
 
 The **README** (space homepage) introduces the plugin. The four sections above are **SUMMARY.md groups** (GitBook sidebar headings).
 
+### Exception: Arawn PurrNet (mode-first)
+
+[Arawn PurrNet Integration](gc2-arawn-purrnet/README.md) uses **multiplayer mode** as the top sidebar split (**Peer to Peer**, **Server Authoritative**). Under each mode, mirror the same framework: Overview, Core Functionality, Demos, Code, Triggers, Instructions, Conditions. Shared intro and mode chooser live on the space homepage.
+
 ---
 
 ## Section details
@@ -230,12 +234,27 @@ code/
 visual-scripting/
 ```
 
+**PurrNet exception** (`gc2-arawn-purrnet/`):
+
+```
+README.md                          ← mode chooser
+SUMMARY.md                         ← ## Peer to Peer / ## Server Authoritative
+peer-to-peer/
+  overview.md
+  core-functionality/
+  demos/
+  code/
+  visual-scripting/
+server-authoritative/
+  (same layout)
+```
+
 Configure each GitBook space Git Sync to point at the matching folder (Core uses repo root). Keep **SUMMARY.md** aligned with GitBook per space.
 
 ### SUMMARY.md rules
 
 - One homepage link at the top (`README.md`).
-- Four `##` section headers matching the table above.
+- Four `##` section headers matching the table above (**except** PurrNet mode-first groups).
 - Page titles match GitBook sidebar labels.
 - No duplicate paths to the same markdown file.
 
@@ -283,7 +302,7 @@ Use `description` for Visual Scripting hub pages (e.g. Triggers overview).
 | **GC2 Traversal** | Draft complete | Overview pages | Stubbed (verify locally) |
 | **GC2 Abilities (External)** | Placeholder | Scaffold only | Awaiting third-party contributors |
 | **Arawn Agnostic Networking** | Draft complete | Scaffold only | Awaiting contributors |
-| **Arawn PurrNet Integration** | Draft complete | Scaffold only | Awaiting contributors |
+| **Arawn PurrNet Integration** | Mode-first homepage | Peer to Peer + Server Authoritative scaffolds | Awaiting contributors |
 | **Arawn Photon Integration** | Draft complete | Scaffold only | Awaiting contributors |
 | **Docs** (collection) | Draft complete | N/A | Links to all spaces + Git Sync table |
 

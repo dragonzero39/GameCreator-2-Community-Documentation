@@ -2,20 +2,22 @@
 
 * [Arawn PurrNet Integration](README.md)
 
-## Core Functionality
+## Peer to Peer
 
-* [Overview](core-functionality/overview.md)
+* [Overview](peer-to-peer/overview.md)
+* [Core Functionality](peer-to-peer/core-functionality/overview.md)
+* [Demos](peer-to-peer/demos/overview.md)
+* [Code](peer-to-peer/code/overview.md)
+* [Triggers](peer-to-peer/visual-scripting/triggers.md)
+* [Instructions](peer-to-peer/visual-scripting/instructions.md)
+* [Conditions](peer-to-peer/visual-scripting/conditions.md)
 
-## Arawn PurrNet Demos
+## Server Authoritative
 
-* [Overview](gc2-arawn-purrnet-demos/overview.md)
-
-## Code
-
-* [Overview](code/overview.md)
-
-## Visual Scripting
-
-* [Triggers](visual-scripting/triggers.md)
-* [Instructions](visual-scripting/instructions.md)
-* [Conditions](visual-scripting/conditions.md)
+* [Overview](server-authoritative/overview.md)
+* [Core Functionality](server-authoritative/core-functionality/overview.md)
+* [Demos](server-authoritative/demos/overview.md)
+* [Code](server-authoritative/code/overview.md)
+* [Triggers](server-authoritative/visual-scripting/triggers.md)
+* [Instructions](server-authoritative/visual-scripting/instructions.md)
+* [Conditions](server-authoritative/visual-scripting/conditions.md)
