@@ -6,15 +6,15 @@ description: Inventory systems — items, bags, equipment, merchants, and crafti
 
 Document **Inventory systems** here — not individual visual scripting nodes.
 
-## Planned topics
+## Topics
 
-- **Setup** — module installation and project settings
-- **Items** — properties, sockets, equipping, crafting flags
-- **Bags** — grid size, wealth, equipment slots, loot
-- **Currencies** — wealth types and conversion
-- **Merchants** — stock, pricing, buy/sell rules
-- **Tinkering** — craft and dismantle recipes
-- **User Interface** — Bag, Merchant, and Tinker skins
+- **[Bags](bags.md)** — List vs Grid, capacity and weight, stock, wealth, equipment, Skin UI, saving, and VS patterns
+- **Setup** — module installation and project settings *(planned)*
+- **Items** — properties, sockets, equipping, crafting flags *(planned)*
+- **Currencies** — wealth types and conversion *(planned)*
+- **Merchants** — stock, pricing, buy/sell rules *(planned)*
+- **Tinkering** — craft and dismantle recipes *(planned)*
+- **User Interface** — Bag, Merchant, and Tinker skins *(planned)*
 
 Official reference: [Inventory](https://docs.gamecreator.io/inventory/)
 

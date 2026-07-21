@@ -5,6 +5,7 @@
 ## Core Functionality
 
 * [Overview](core-functionality/overview.md)
+* [Bags](core-functionality/bags.md)
 
 ## GC2 Inventory Demos
 
