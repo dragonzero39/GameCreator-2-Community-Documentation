@@ -5,7 +5,13 @@
 ## Core Functionality
 
 * [Overview](core-functionality/overview.md)
+* [Setup](core-functionality/setup.md)
+* [Items](core-functionality/items.md)
 * [Bags](core-functionality/bags.md)
+* [Currencies](core-functionality/currencies.md)
+* [Merchants](core-functionality/merchants.md)
+* [Tinkering](core-functionality/tinkering.md)
+* [User Interface](core-functionality/user-interface.md)
 
 ## GC2 Inventory Demos
 
