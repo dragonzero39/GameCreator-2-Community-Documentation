@@ -21,27 +21,27 @@ Official reference: [Inventory documentation](https://docs.gamecreator.io/invent
 
 ### Items and properties
 
-**Item** assets define stackable or unique objects with custom properties, sockets for attachments, equipping rules, and usability (consume, use in world). **Runtime items** represent live instances in a bag with state separate from the ScriptableObject definition.
+**Item** assets define stackable or unique objects with custom properties, sockets, equipping rules, and usability. **Runtime Items** are live bag instances. See **[Items](core-functionality/items.md)**.
 
 ### Bags and equipment
 
-The **Bag** component stores items with configurable width/height, wealth per currency, equipment slots, and weight limits. Equipment maps items to body slots and drives visual props on Characters. See **[Bags](core-functionality/bags.md)** for List vs Grid, capacity rules, Skin UI, saving, and visual scripting patterns.
+The **Bag** component stores items with configurable size, wealth, equipment slots, and weight limits. See **[Bags](core-functionality/bags.md)**.
 
 ### Merchants and economy
 
-**Merchant** components define buy/sell stock, prices, and currency acceptance. Visual scripting covers opening merchant UI, transactions, and trade conditions.
+**Merchant** components define buy/sell stock, rates, and infinite flags. See **[Merchants](core-functionality/merchants.md)** and **[Currencies](core-functionality/currencies.md)**.
 
 ### Tinker (crafting)
 
-**Tinker** UI supports crafting and dismantling recipes — ingredient checks, output items, and success/failure from visual scripting.
+**Tinker** UI crafts and dismantles from Item recipes. See **[Tinkering](core-functionality/tinkering.md)**.
 
 ### Loot
 
-**Loot tables** define weighted drops. Instructions instantiate items or roll tables into bags.
+**Loot tables** define weighted drops into Bags (covered under [Bags](core-functionality/bags.md)).
 
 ### User interface
 
-Skins for **Bag UI**, **Merchant UI**, and **Tinker UI** integrate with Unity UI Toolkit / uGUI patterns shipped with the module.
+Skins for **Bag**, **Merchant**, and **Tinker** UI. See **[User Interface](core-functionality/user-interface.md)**.
 
 ---
 
@@ -71,7 +71,7 @@ Inventory adds a focused visual scripting catalog (~19 events, ~37 instructions,
 
 | Section | Contents |
 |---------|----------|
-| [**Core Functionality**](core-functionality/overview.md) | [Bags](core-functionality/bags.md), items, equipment, merchants, tinker, currencies, UI |
+| [**Core Functionality**](core-functionality/overview.md) | [Setup](core-functionality/setup.md), [Items](core-functionality/items.md), [Bags](core-functionality/bags.md), [Currencies](core-functionality/currencies.md), [Merchants](core-functionality/merchants.md), [Tinkering](core-functionality/tinkering.md), [User Interface](core-functionality/user-interface.md) |
 | [**GC2 Inventory Demos**](gc2-inventory-demos/overview.md) | Adventure, Examples, Items, UI demo packages |
 | [**Code**](code/overview.md) | Bag API, custom item properties, extension patterns |
 | [**Visual Scripting**](visual-scripting/triggers.md) | **Priority** — Events, Instructions, Conditions |
