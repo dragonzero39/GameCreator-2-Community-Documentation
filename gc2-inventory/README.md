@@ -25,7 +25,7 @@ Official reference: [Inventory documentation](https://docs.gamecreator.io/invent
 
 ### Bags and equipment
 
-The **Bag** component stores items with configurable width/height, wealth per currency, equipment slots, and weight limits. Equipment maps items to body slots and drives visual props on Characters.
+The **Bag** component stores items with configurable width/height, wealth per currency, equipment slots, and weight limits. Equipment maps items to body slots and drives visual props on Characters. See **[Bags](core-functionality/bags.md)** for List vs Grid, capacity rules, Skin UI, saving, and visual scripting patterns.
 
 ### Merchants and economy
 
@@ -71,7 +71,7 @@ Inventory adds a focused visual scripting catalog (~19 events, ~37 instructions,
 
 | Section | Contents |
 |---------|----------|
-| [**Core Functionality**](core-functionality/overview.md) | Items, bags, equipment, merchants, tinker, currencies, UI |
+| [**Core Functionality**](core-functionality/overview.md) | [Bags](core-functionality/bags.md), items, equipment, merchants, tinker, currencies, UI |
 | [**GC2 Inventory Demos**](gc2-inventory-demos/overview.md) | Adventure, Examples, Items, UI demo packages |
 | [**Code**](code/overview.md) | Bag API, custom item properties, extension patterns |
 | [**Visual Scripting**](visual-scripting/triggers.md) | **Priority** — Events, Instructions, Conditions |

@@ -12,3 +12,5 @@ Inventory **Instructions** run inside **Actions** lists to modify bags, equipmen
 {% endhint %}
 
 Official reference: [Inventory Visual Scripting — Instructions](https://docs.gamecreator.io/inventory/visual-scripting/instructions/)
+
+Related: [Bags](../core-functionality/bags.md) — capacity, transfer, UI, and Bags instruction cheat sheet.
