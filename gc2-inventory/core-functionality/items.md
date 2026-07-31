@@ -21,7 +21,7 @@ Official: [Items](https://docs.gamecreator.io/inventory/items/) · [Properties](
 | ---- | ---- |
 | **Item** | Project definition — name, shape, price, props, sockets, equip, use, craft |
 | **Runtime Item** | Instance in a Bag; can differ from the template |
-| **Parent** | Inheritance for type checks, properties, sockets, and shared logic |
+| **Parent Item** | Another Item this one inherits from — type matching, props/sockets, shared logic |
 | **ID** | Unique string in the Catalogue — regenerate after duplicating |
 | **Prefab** | World mesh for drop/instantiate; empty = cannot drop into the scene |
 
@@ -31,7 +31,7 @@ Official: [Items](https://docs.gamecreator.io/inventory/items/) · [Properties](
 
 | Section | What you set |
 | ------- | ------------ |
-| **Head** | **ID**, **Parent**, **Prefab**, drop rules |
+| **Head** | **ID**, **Parent Item**, **Prefab**, drop rules |
 | **Info** | **Name**, **Description**, **Sprite**, **Color**; optional **On Create**; **Execute From Parent** |
 | **Shape** | **Width**, **Height** (Grid), **Weight**, **Max Stack** |
 | **Price** | **Currency** + value; **Can Buy From Merchant** / **Can Sell To Merchant** |
@@ -57,13 +57,63 @@ Items with **Sockets** force **Max Stack = 1**.
 
 ---
 
-## Inheritance
+## Parent Item
 
-- Children can inherit **Properties** and **Sockets** when inherit toggles are on.
-- Type checks: a child matches itself and its parents; a parent does **not** match a child.
-- **Execute From Parent** (Info / Equip / Usage) runs parent conditions/instructions first — use for shared potion SFX, equip rules, etc.
+The **Parent** field on an Item points at another Item asset. That parent is a **type template** in an inheritance chain — not a full copy of every field.
+
+```text
+Weapon          ← abstract parent (often never given to the player)
+  └─ Sword
+       ├─ Iron Sword
+       └─ Steel Sword
+```
+
+A child **is a type of** its parent (and grandparents). A parent is **not** a type of its child.
+
+| Check | Iron Sword vs Sword | Sword vs Iron Sword |
+| ----- | ------------------- | ------------------- |
+| Child vs parent | Matches | — |
+| Parent vs child | — | Does **not** match |
+
+Use **Is Type of Item** (and anything that calls the same inheritance test) against the **parent** when you mean “any sword,” and against the **leaf** when you mean that exact Item.
+
+### What Parent is for
+
+| Use | How |
+| --- | --- |
+| **Equipment slots** | Slot **Base Item** = `Head` / `Weapon` — every child equips in that slot |
+| **Sockets** | Socket Base Item = `Rune` — any Item that inherits from Rune can attach |
+| **Bag UI tabs** | **Filter by Parent** shows only Items under that type |
+| **Tinker stations** | **Filter Item** on **Open Tinker UI** (forge vs alchemy) |
+| **Merchant niche** | **Sell Niche Type** filters by inheritance |
+| **Has Item / counts** | Query the parent ID to count all children in a Bag |
+| **Shared logic** | **Execute From Parent** on Info / Equip / Usage |
+
+### What inherits (and what does not)
+
+| Inherits when enabled | Stays per-Item (set on each asset) |
+| --------------------- | ---------------------------------- |
+| **Properties** (**Inherit From Parent**) — override values with the left toggle | **Info** (name, sprite, color) |
+| **Sockets** (**Inherit From Parent**) | **Shape** (size, weight, stack) |
+| **Execute From Parent** runs parent **On Create** / **Can Equip** / **On Equip** / **Can Use** / **On Use** first | **Price**, craft recipe, prefab, drop rules |
+
+{% hint style="success" %}
+Define shared property IDs (e.g. `defense`) on the parent once. Children inherit the property and only override the number — Wooden Shield vs Steel Shield.
+{% endhint %}
+
+**Execute From Parent** example: put drink animation + SFX on a `Potion` parent; Health / Mana potions enable the toggle and only add their heal/mana instructions.
+
+### Practical tips
+
+1. Build a shallow hierarchy: category → subtype → concrete Item.
+2. Parents can be “abstract” (no prefab, never added to Bags) and still work for type checks and filters.
+3. Keep leaf Items thin — unique name, sprite, price, and overrides only.
+4. Deep chains work (child → parent → grandparent), but prefer two or three levels for clarity.
+
+Official inheritance notes: [Items](https://docs.gamecreator.io/inventory/items/) · [Properties](https://docs.gamecreator.io/inventory/items/properties/) · [Equipment](https://docs.gamecreator.io/inventory/bags/equipment/)
 
 ---
+
 
 ## Properties and sockets
 
@@ -111,7 +161,7 @@ Station UI and craft/dismantle flow: [Tinkering](tinkering.md).
 2. No **Prefab** → cannot drop or instantiate in the world.
 3. One **Currency** per Item price.
 4. Equipped socket changes unequip → modify → re-equip.
-5. Prefer parent templates for shared logic; keep leaf items thin.
+5. Prefer parent templates for type filters and shared logic; keep leaf items thin.
 
 ---
 
