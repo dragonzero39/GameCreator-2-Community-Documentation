@@ -6,13 +6,16 @@
 
 * [Overview](core-functionality/overview.md)
 * [Setup](core-functionality/setup.md)
-* [Inventory Extended Plugin](core-functionality/inventory-extended-plugin.md)
 * [Items](core-functionality/items.md)
 * [Bags](core-functionality/bags.md)
 * [Currencies](core-functionality/currencies.md)
 * [Merchants](core-functionality/merchants.md)
 * [Tinkering](core-functionality/tinkering.md)
 * [User Interface](core-functionality/user-interface.md)
+
+## Inventory Extended Plugin
+
+* [Page 1](inventory-extended-plugin/page-1.md)
 
 ## GC2 Inventory Demos
 
