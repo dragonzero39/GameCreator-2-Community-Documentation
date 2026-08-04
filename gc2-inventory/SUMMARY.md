@@ -6,6 +6,7 @@
 
 * [Overview](core-functionality/overview.md)
 * [Setup](core-functionality/setup.md)
+* [Inventory Extended Plugin](core-functionality/inventory-extended-plugin.md)
 * [Items](core-functionality/items.md)
 * [Bags](core-functionality/bags.md)
 * [Currencies](core-functionality/currencies.md)
