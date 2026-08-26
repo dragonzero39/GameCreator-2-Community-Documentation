@@ -6,6 +6,10 @@ description: Developer extension points for Game Creator 2 Core.
 
 This section covers **how to extend Core in C#** — custom Instructions, Events, Conditions, save data, and integration with other Unity systems.
 
+## Pages
+
+- [Repositories & Settings](repositories-and-settings.md) — `IRepository`, `TRepository`, and the **Game Creator → Settings** window
+
 ## Topics to cover
 
 - Custom **Instructions**, **Events**, and **Conditions** (code generators in Core editor)

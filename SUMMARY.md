@@ -17,6 +17,7 @@
 ## Code
 
 * [Overview](code/overview.md)
+* [Repositories & Settings](code/repositories-and-settings.md)
 
 ## Visual Scripting
 
